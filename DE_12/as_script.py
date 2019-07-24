@@ -1,3 +1,4 @@
+
 import aerospike
 from aerospike import exception as ex
 from aerospike import predicates as p
@@ -96,7 +97,7 @@ def get_ltv_by_phone(phone_number):
             return f"Нет значения 'lifetime_value' для поля {phone_number}"
 
     except ex.IndexNotFound:
-        # создаем индекс и пробуем снова
+        # создаем индекс и пробуем снова (вынести в отдельную функцию создание индекса!)
         client.index_string_create(_NS, _SET, bins, 'index_'+bins)
         return get_ltv_by_phone(phone_number)
 
