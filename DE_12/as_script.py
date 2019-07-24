@@ -1,6 +1,3 @@
-
-# policy={'key': aerospike.POLICY_KEY_SEND})
-# import the module
 import aerospike
 from aerospike import exception as ex
 from aerospike import predicates as p
